@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    LearnEra
+  </title>
+  <link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="style_WordGame.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="word_game.js" defer></script>
+  <script src="word_game_script.js" defer></script>
+  <style>
+    /* Button Container Styles */
+ .btn__container_learningh {
+     display: flex;
+     justify-content: center;
+     gap: 60px;
+     margin-top: 2 rem;
+     padding: 0 1rem;
+     align-items: center;
+ }
+ 
+ .btn1 {
+     padding: 12px 24px;
+     background: linear-gradient(45deg, #870000, #ba2b2b);
+     color: white;
+     border: none;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     box-shadow: 0 4px 15px rgba(199, 46, 71, 0.3);
+     margin-top: 2rem;
+ }
+ 
+ .btn1:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(184, 0, 0, 0.4);
+ }
+ 
+ @media (max-width: 600px) {
+     .btn__container_learningh {
+         flex-direction: row;
+         gap: 10px;
+     }
+     
+     .btn1 {
+         padding: 10px 20px;
+         font-size: 14px;
+     }
+ }
+ </style>
+</head>
+
+<body>
+  <img id="image"></img>
+  <div class="container">
+    <h2>Word Scramble</h2>
+    <div class="content">
+
+      <p class="word"></p>
+      <div class="details">
+
+        <p class="hint">Hint: <span></span></p>
+        <p class="time">Time Left: <span><b>30</b>s</span></p>
+      </div>
+      <input type="text" spellcheck="false" placeholder="Enter a valid word">
+      <div class="buttons">
+        <button class="refresh-word">Refresh Word</button>
+        <button class="check-word">Check Word</button>
+      </div>
+      <div class="btn__container_learningh" style="margin: 0;">
+        <button type="button" class="btn1" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+    </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu-Fun | Multiplication Tables</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin-top: 100px;
+        background: linear-gradient(to right, #fce4ec, #e0f7fa);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        padding: 30px;
+        height: 100%;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #ad1457;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        color: #880e4f;
+        margin-bottom: 30px;
+    }
+
+    .mytables {
+        /* background: linear-gradient(135deg, #fce4ec, #e0f7fa); */
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .table-container {
+        margin-top: 60px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #880e4f;
+    }
+
+    .table-display {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        color: #ad1457;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-content {
+        width: 300px;
+        font-size: 2rem;
+        line-height: 1.6;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 25px;
+        border: 4px solid #f06292;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .table-content:hover {
+        transform: scale(1.05);
+    }
+
+    .audio_button {
+        margin-top: 50px;
+        padding: 12px 25px;
+        background-color: #f48fb1;
+        color: #880e4f;
+        font-weight: bold;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .audio_button:hover {
+        background-color: #ec407a;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .slider-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .slider {
+        display: none;
+        animation: fade 1.5s;
+    }
+
+    @keyframes fade {
+        from { opacity: 0.5 }
+        to { opacity: 1 }
+    }
+
+    .numbertext {
+        color: white;
+        font-size: 16px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .prev-button, .next-button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 60px;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .prev-button:hover,
+    .next-button:hover {
+        background: #ec407a;
+        transform: scale(1.1);
+        color: white;
+    }
+
+    .prev-button { left: 10px; }
+    .next-button { right: 10px; }
+
+    .dots {
+        position: absolute;
+        display: flex;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #ec407a;
+        transform: scale(1.2);
+    }
+
+    .red img {
+        width: 95px;
+        float: left;
+        padding-left: 2%;
+        padding-top: 1%;
+        filter: invert(0.8);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .table-display {
+            font-size: 2rem;
+        }
+        .table-content {
+            font-size: 1.5rem;
+            padding: 15px;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .table-display {
+            font-size: 2rem;
+        }
+        .table-content {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        .audio_button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 3px;
+        }
+    }
+</style>
+<link rel="stylesheet" href="/edufun/style.css">
+
+</head>
+
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-school"></i><marquee>"EDU-FUN - An E-Learning Platform For KG Students"</marquee></a>
+    <nav class="navbar">
+      <a href="../m_learn.php">Dashboard</a>
+      <a href="../logout.php">Logout</a>
+    </nav>
+</header>
+    <!-- Audio elements for each table -->
+    <audio id="table1">
+        <source src="Audio/Table/1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table2">
+        <source src="Audio/Table/2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table3">
+        <source src="Audio/Table/3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table4">
+        <source src="Audio/Table/4.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table5">
+        <source src="Audio/Table/5.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table6">
+        <source src="Audio/Table/6.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table7">
+        <source src="Audio/Table/7.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table8">
+        <source src="Audio/Table/8.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table9">
+        <source src="Audio/Table/9.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="table10">
+        <source src="Audio/Table/10.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="mytables">
+        <div class="slider-container">
+            <!-- Table 1 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">1 / 10</div>
+                    <div class="table-display">Table of 1</div>
+                    <div class="table-content">
+                        1 × 1 = 1<br>
+                        1 × 2 = 2<br>
+                        1 × 3 = 3<br>
+                        1 × 4 = 4<br>
+                        1 × 5 = 5<br>
+                        1 × 6 = 6<br>
+                        1 × 7 = 7<br>
+                        1 × 8 = 8<br>
+                        1 × 9 = 9<br>
+                        1 × 10 = 10
+                    </div>
+                    <button onclick="playTable(1)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 2 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">2 / 10</div>
+                    <div class="table-display">Table of 2</div>
+                    <div class="table-content">
+                        2 × 1 = 2<br>
+                        2 × 2 = 4<br>
+                        2 × 3 = 6<br>
+                        2 × 4 = 8<br>
+                        2 × 5 = 10<br>
+                        2 × 6 = 12<br>
+                        2 × 7 = 14<br>
+                        2 × 8 = 16<br>
+                        2 × 9 = 18<br>
+                        2 × 10 = 20
+                    </div>
+                    <button onclick="playTable(2)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 3 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">3 / 10</div>
+                    <div class="table-display">Table of 3</div>
+                    <div class="table-content">
+                        3 × 1 = 3<br>
+                        3 × 2 = 6<br>
+                        3 × 3 = 9<br>
+                        3 × 4 = 12<br>
+                        3 × 5 = 15<br>
+                        3 × 6 = 18<br>
+                        3 × 7 = 21<br>
+                        3 × 8 = 24<br>
+                        3 × 9 = 27<br>
+                        3 × 10 = 30
+                    </div>
+                    <button onclick="playTable(3)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 4 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">4 / 10</div>
+                    <div class="table-display">Table of 4</div>
+                    <div class="table-content">
+                        4 × 1 = 4<br>
+                        4 × 2 = 8<br>
+                        4 × 3 = 12<br>
+                        4 × 4 = 16<br>
+                        4 × 5 = 20<br>
+                        4 × 6 = 24<br>
+                        4 × 7 = 28<br>
+                        4 × 8 = 32<br>
+                        4 × 9 = 36<br>
+                        4 × 10 = 40
+                    </div>
+                    <button onclick="playTable(4)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 5 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">5 / 10</div>
+                    <div class="table-display">Table of 5</div>
+                    <div class="table-content">
+                        5 × 1 = 5<br>
+                        5 × 2 = 10<br>
+                        5 × 3 = 15<br>
+                        5 × 4 = 20<br>
+                        5 × 5 = 25<br>
+                        5 × 6 = 30<br>
+                        5 × 7 = 35<br>
+                        5 × 8 = 40<br>
+                        5 × 9 = 45<br>
+                        5 × 10 = 50
+                    </div>
+                    <button onclick="playTable(5)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 6 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">6 / 10</div>
+                    <div class="table-display">Table of 6</div>
+                    <div class="table-content">
+                        6 × 1 = 6<br>
+                        6 × 2 = 12<br>
+                        6 × 3 = 18<br>
+                        6 × 4 = 24<br>
+                        6 × 5 = 30<br>
+                        6 × 6 = 36<br>
+                        6 × 7 = 42<br>
+                        6 × 8 = 48<br>
+                        6 × 9 = 54<br>
+                        6 × 10 = 60
+                    </div>
+                    <button onclick="playTable(6)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 7 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">7 / 10</div>
+                    <div class="table-display">Table of 7</div>
+                    <div class="table-content">
+                        7 × 1 = 7<br>
+                        7 × 2 = 14<br>
+                        7 × 3 = 21<br>
+                        7 × 4 = 28<br>
+                        7 × 5 = 35<br>
+                        7 × 6 = 42<br>
+                        7 × 7 = 49<br>
+                        7 × 8 = 56<br>
+                        7 × 9 = 63<br>
+                        7 × 10 = 70
+                    </div>
+                    <button onclick="playTable(7)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 8 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">8 / 10</div>
+                    <div class="table-display">Table of 8</div>
+                    <div class="table-content">
+                        8 × 1 = 8<br>
+                        8 × 2 = 16<br>
+                        8 × 3 = 24<br>
+                        8 × 4 = 32<br>
+                        8 × 5 = 40<br>
+                        8 × 6 = 48<br>
+                        8 × 7 = 56<br>
+                        8 × 8 = 64<br>
+                        8 × 9 = 72<br>
+                        8 × 10 = 80
+                    </div>
+                    <button onclick="playTable(8)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 9 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">9 / 10</div>
+                    <div class="table-display">Table of 9</div>
+                    <div class="table-content">
+                        9 × 1 = 9<br>
+                        9 × 2 = 18<br>
+                        9 × 3 = 27<br>
+                        9 × 4 = 36<br>
+                        9 × 5 = 45<br>
+                        9 × 6 = 54<br>
+                        9 × 7 = 63<br>
+                        9 × 8 = 72<br>
+                        9 × 9 = 81<br>
+                        9 × 10 = 90
+                    </div>
+                    <button onclick="playTable(9)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <!-- Table 10 -->
+            <div class="slider">
+                <div class="table-container">
+                    <div class="numbertext">10 / 10</div>
+                    <div class="table-display">Table of 10</div>
+                    <div class="table-content">
+                        10 × 1 = 10<br>
+                        10 × 2 = 20<br>
+                        10 × 3 = 30<br>
+                        10 × 4 = 40<br>
+                        10 × 5 = 50<br>
+                        10 × 6 = 60<br>
+                        10 × 7 = 70<br>
+                        10 × 8 = 80<br>
+                        10 × 9 = 90<br>
+                        10 × 10 = 100
+                    </div>
+                    <button onclick="playTable(10)" type="button" class="audio_button">Play Table</button>
+                </div>
+            </div>
+            
+            <div class="prev-button" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="next-button" onclick="plusSlides(1)">&#10095;</div>
+        </div>
+        <div class="dots">
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+            <div class="dot" onclick="currentSlide(3)"></div>
+            <div class="dot" onclick="currentSlide(4)"></div>
+            <div class="dot" onclick="currentSlide(5)"></div>
+            <div class="dot" onclick="currentSlide(6)"></div>
+            <div class="dot" onclick="currentSlide(7)"></div>
+            <div class="dot" onclick="currentSlide(8)"></div>
+            <div class="dot" onclick="currentSlide(9)"></div>
+            <div class="dot" onclick="currentSlide(10)"></div>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow functionality
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slider");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        
+        // Audio functionality for tables
+        function playTable(tableNumber) {
+            var audio = document.getElementById("table" + tableNumber);
+            audio.currentTime = 0; // Rewind to start
+            audio.play();
+        }
+
+    </script>
+</body>
+</html>

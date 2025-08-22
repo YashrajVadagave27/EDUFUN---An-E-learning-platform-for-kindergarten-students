@@ -1,0 +1,129 @@
+/* Root variables from style.css */
+:root {
+    --orange: #f9ba60;
+    --pink: #e9768f;
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color: #666;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #f9f9f9; */
+    color: var(--black);
+    text-align: center;
+}
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+  }
+  a{
+    font-size: 20px;
+  }
+  .header .logo{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--black);
+  }
+  
+  .header .logo i{
+    color: var(--orange);
+  }
+  
+  .header .navbar a{
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    color: var(--black);
+  }
+  
+  .header .navbar a:hover,
+  .header .icons div:hover{
+    color: var(--orange);
+  }
+
+/* Quiz Container */
+.container {
+    margin: 10rem auto 0;
+    max-width: 600px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    min-height: 400px; /* Ensure consistent height */
+    position: relative; /* Ensure it stays in place */
+    transition: all 0.3s ease; /* Smooth transitions for content updates */
+}
+
+
+
+.container h1 {
+    font-size: 2.5rem;
+    color: var(--orange);
+    margin-bottom: 2rem;
+}
+
+.question {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.question p {
+    margin: 1rem 0;
+}
+
+#quiz-form input[type="number"] {
+    width: 90%;
+    padding: 0.8rem;
+    border: 1px solid var(--light-color);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+#quiz-form input[type="number"]:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 5px rgba(249, 186, 96, 0.4);
+}
+
+#quiz-form button {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#quiz-form button:hover {
+    background-color: var(--pink);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container {
+        /* margin: 8rem 5%; */
+        padding: 1.5rem;
+    }
+
+    #quiz-form input[type="number"] {
+        font-size: 1.4rem;
+    }
+
+    #quiz-form button {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE htmlregister__btn>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <style>
+    .header{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 9%;
+      background-color:white;
+      box-shadow: var(--box-shadow);
+    }
+    .header .navbar a{
+      font-size: 1.1rem;
+      margin: 0 1rem;
+      color: var(--black);
+    }
+    marquee{
+      font-size: 1.6rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      
+    }
+    .navbar a:hover{
+      color: orange;
+    }
+  </style>
+  <link rel="stylesheet" href="elearn/style1.css" />
+  <title>
+    LearnEra
+  </title>
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-school"></i><marquee>"EDU-FUN - An E-Learning Platform For KG Students"</marquee></a>
+
+    <nav class="navbar">
+        <a href="student_dashboard.php">Dashboard</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+
+</header>
+<br><br>
+  <div class="headline_container">
+    
+    <h1> 𒆜 GAME TIME 𒆜 </h1>
+  </div>
+
+  <video autoplay muted loop class="myVideo">
+    <source src="video/video.mp4" type="video/mp4" />
+  </video>
+  <div class="main__content">
+    <div class="btn__container_learningh" style="margin: 0;">
+      <a href="elearn/Game.html"><button class="btn">Drag & Drop</button></a>
+      <a href="elearn/memoryGame.html"><button class="btn">Memory Game</button></a>
+      <a href="elearn/quizgame.html"><button class="btn">Quiz Game</button></a>
+      <a href="elearn/wordGame.html"><button class="btn">Word puzzle </button></a>
+      <a href="elearn/scramble.html"><button class="btn">Guess word</button></a>
+      <a href="elearn/MathGame.html"><button class="btn">Math Game</button></a>
+
+    </div>
+  </div>
+</body>
+
+</html>

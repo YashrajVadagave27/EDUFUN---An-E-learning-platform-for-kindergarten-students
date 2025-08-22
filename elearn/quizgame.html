@@ -1,0 +1,90 @@
+<!DOCTYPE htmlregister__btn>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quizgame1.css" />
+    <title>
+        LearnEra
+    </title>
+    <style>
+        /* Button Container Styles */
+     .btn__container_learningh1 {
+         display: flex;
+         justify-content: center;
+         gap: 60px;
+         margin-top: 2 rem;
+         padding: 0 1rem;
+         align-items: center;
+     }
+     
+     .btn5 {
+         padding: 12px 24px;
+         background: linear-gradient(45deg, #870000, #ba2b2b);
+         color: white;
+         border: none;
+         border-radius: 8px;
+         font-size: 16px;
+         font-weight: 600;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         box-shadow: 0 4px 15px rgba(199, 46, 71, 0.3);
+         margin-top: 2rem;
+     }
+     
+     .btn5:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 6px 20px rgba(184, 0, 0, 0.4);
+     }
+     
+     @media (max-width: 600px) {
+         .btn__container_learningh1 {
+             flex-direction: row;
+             gap: 10px;
+         }
+         
+         .btn5 {
+             padding: 10px 20px;
+             font-size: 14px;
+         }
+     }
+     </style>
+    
+</head>
+
+<body>
+    <div class="myquiz">
+        <div class="red">
+            <img src="./pictures/logo.jpg" alt="Logo">
+        </div>
+
+        <div class="headline_container">
+            <h1> 𒆜 QUIZ TIME 𒆜 </h1>
+        </div>
+        <!-- <video autoplay muted loop class="myVideo">
+            <source src="./picture/game.gif" type="image/gif" />
+        </video> -->
+        <div class="main__content" style="margin-top: -70px;">
+            <div class="btn__container_learningh" style="margin: 0;">
+                <a href="Fruit.html"><button class="btn1">Fruit</button></a>
+                <a href="Flower.html"><button class="btn2">Flower</button></a>
+                <a href="Animal.html"><button class="btn3">Animal </button></a>
+                <a href="Bird.html"><button class="btn4">Bird</button></a>
+                <div class="btn__container_learningh1" style="margin: 0;">
+                    <button type="button" class="btn5" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
+</body>
+
+</html>

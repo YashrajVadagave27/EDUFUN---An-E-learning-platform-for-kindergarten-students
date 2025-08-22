@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
+    <link rel="stylesheet" href="style_drag.css" />
+    <title>
+        LearnEra
+    </title>
+    <link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+</head>
+
+<body>
+    <h1 style="text-align: center;color: green;margin-top: 100px;">Drag the animals and Drop it in the correct box!! </h1>
+    <section class="draggable-elements" id="draggable-container"></section>
+<section class="droppable-elements" id="droppable-container"></section>
+
+    
+    <div class="btn__container_learningh" style="margin: 0;">
+        <button type="button" class="btn1" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+        <button type="button" class="btn1" onclick="window.location.reload(true);">Play Again</button>
+    </div>
+    <script>
+  const allAnimals = [
+    { id: "cat", icon: "cat", color: "#ff6384", label: "Cat" },
+    { id: "dog", icon: "dog", color: "#36a2eb", label: "Dog" },
+    { id: "dove", icon: "dove", color: "#ffce56", label: "Bird" },
+    { id: "fish", icon: "fish", color: "#9966ff", label: "Fish" },
+    { id: "frog", icon: "frog", color: "#4bc0c0", label: "Frog" },
+    { id: "horse", icon: "horse", color: "#333333", label: "Horse" },
+    { id: "hippo", icon: "hippo", color: "#ff9f40", label: "Hippo" },
+    { id: "spider", icon: "spider", color: "#ff99cc", label: "Spider" },
+  ];
+
+  // Shuffle utility
+  function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  const selectedAnimals = shuffle([...allAnimals]).slice(0, 5);
+
+  // Generate draggables
+  const draggableContainer = document.getElementById("draggable-container");
+  selectedAnimals.forEach(animal => {
+    const icon = document.createElement("i");
+    icon.className = `fas fa-${animal.icon} draggable`;
+    icon.setAttribute("draggable", "true");
+    icon.id = animal.id;
+    icon.style.color = animal.color;
+    draggableContainer.appendChild(icon);
+  });
+
+  // Generate droppables
+  const droppableContainer = document.getElementById("droppable-container");
+  shuffle([...selectedAnimals]).forEach(animal => {
+    const div = document.createElement("div");
+    div.className = "droppable";
+    div.setAttribute("data-draggable-id", animal.id);
+
+    const span = document.createElement("span");
+    span.textContent = animal.label;
+
+    div.appendChild(span);
+    droppableContainer.appendChild(div);
+  });
+</script>
+
+    <script src="script_drag.js"></script>
+</body>
+
+</html>

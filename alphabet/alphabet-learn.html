@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Learn Alphabets</title>
+    <style>
+        body {
+            margin-top: 100px;
+            background: linear-gradient(to right, #f9e3ff, #e0f7fa);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #6a1b9a;
+            margin-bottom: 30px;
+        }
+        h3{
+            font-size: 2rem;
+            color: #6a1b9a;
+            margin-bottom: 30px;
+        }
+        .alphabet-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 150px;
+        }
+        .alphabet-card {
+            background-color: #ffffff;
+            border: 4px solid #ba68c8;
+            border-radius: 25px;
+            width: 250px;
+            height: 350px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .alphabet-card:hover {
+            transform: scale(1.05);
+        }
+        .alphabet-card img {
+            width: 220px;
+            height: 270px;
+            margin-bottom: 10px;
+        }
+        .alphabet-card button {
+            background-color: #ce93d8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a148c;
+            cursor: pointer;
+        }
+        .alphabet-card button:hover {
+            background-color: #ab47bc;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="/edufun/style.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-school"></i><marquee>"EDU-FUN - An E-Learning Platform For KG Students"</marquee></a>
+    <nav class="navbar">
+      <a href="../e_learn.php">Dashboard</a>
+      <a href="../logout.php">Logout</a>
+    </nav>
+</header>
+
+    <h1>🎵 Learn Alphabets</h1>
+    <h3>Click on button below image to hear letter audio!</h3><br><br>
+    <div class="alphabet-container">
+
+        <div class="alphabet-card" data-letter="A">
+            <img src="./pictures/alphabet-learn/A.png" alt="A for Apple" />
+            <button class="play-btn">A</button>
+            <audio src="./Audio/Alphabet/A.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="B">
+            <img src="./pictures/alphabet-learn/B.png" alt="B for Ball" />
+            <button class="play-btn">B</button>
+            <audio src="./Audio/Alphabet/B.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="C">
+            <img src="./pictures/alphabet-learn/C.png" alt="C for Cat" />
+            <button class="play-btn">C</button>
+            <audio src="./Audio/Alphabet/C.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="D">
+            <img src="./pictures/alphabet-learn/D.png" alt="D for Dog" />
+            <button class="play-btn">D</button>
+            <audio src="./Audio/Alphabet/D.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="E">
+            <img src="./pictures/alphabet-learn/E.png" alt="E for Elephant" />
+            <button class="play-btn">E</button>
+            <audio src="./Audio/Alphabet/E.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="F">
+            <img src="./pictures/alphabet-learn/F.png" alt="F for Fish" />
+            <button class="play-btn">F</button>
+            <audio src="./Audio/Alphabet/F.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="G">
+            <img src="./pictures/alphabet-learn/G.png" alt="G for Goat" />
+            <button class="play-btn">G</button>
+            <audio src="./Audio/Alphabet/G.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="H">
+            <img src="./pictures/alphabet-learn/H.png" alt="H for Horse" />
+            <button class="play-btn">H</button>
+            <audio src="./Audio/Alphabet/H.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="I">
+            <img src="./pictures/alphabet-learn/I.png" alt="I for Ice cream" />
+            <button class="play-btn">I</button>
+            <audio src="./Audio/Alphabet/I.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="J">
+            <img src="./pictures/alphabet-learn/J.png" alt="J for Jug" />
+            <button class="play-btn">J</button>
+            <audio src="./Audio/Alphabet/J.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="K">
+            <img src="./pictures/alphabet-learn/K.png" alt="K for Kite" />
+            <button class="play-btn">K</button>
+            <audio src="./Audio/Alphabet/K.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="L">
+            <img src="./pictures/alphabet-learn/L.png" alt="L for Lion" />
+            <button class="play-btn">L</button>
+            <audio src="./Audio/Alphabet/L.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="M">
+            <img src="./pictures/alphabet-learn/M.png" alt="M for Monkey" />
+            <button class="play-btn">M</button>
+            <audio src="./Audio/Alphabet/M.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="N">
+            <img src="./pictures/alphabet-learn/N.png" alt="N for Nest" />
+            <button class="play-btn">N</button>
+            <audio src="./Audio/Alphabet/N.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="O">
+            <img src="./pictures/alphabet-learn/O.png" alt="O for Orange" />
+            <button class="play-btn">O</button>
+            <audio src="./Audio/Alphabet/O.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="P">
+            <img src="./pictures/alphabet-learn/P.png" alt="P for Parrot" />
+            <button class="play-btn">P</button>
+            <audio src="./Audio/Alphabet/P.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="Q">
+            <img src="./pictures/alphabet-learn/Q.png" alt="Q for Queen" />
+            <button class="play-btn">Q</button>
+            <audio src="./Audio/Alphabet/Q.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="R">
+            <img src="./pictures/alphabet-learn/R.png" alt="R for Rabbit" />
+            <button class="play-btn">R</button>
+            <audio src="./Audio/Alphabet/R.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="S">
+            <img src="./pictures/alphabet-learn/S.png" alt="S for Sun" />
+            <button class="play-btn">S</button>
+            <audio src="./Audio/Alphabet/S.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="T">
+            <img src="./pictures/alphabet-learn/T.png" alt="T for Tiger" />
+            <button class="play-btn">T</button>
+            <audio src="./Audio/Alphabet/T.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="U">
+            <img src="./pictures/alphabet-learn/U.png" alt="U for Umbrella" />
+            <button class="play-btn">U</button>
+            <audio src="./Audio/Alphabet/U.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="V">
+            <img src="./pictures/alphabet-learn/V.png" alt="V for Violin" />
+            <button class="play-btn">V</button>
+            <audio src="./Audio/Alphabet/V.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="W">
+            <img src="./pictures/alphabet-learn/W.png" alt="W for Whale" />
+            <button class="play-btn">W</button>
+            <audio src="./Audio/Alphabet/W.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="X">
+            <img src="./pictures/alphabet-learn/X.png" alt="X for Xylophone" />
+            <button class="play-btn">X</button>
+            <audio src="./Audio/Alphabet/X.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="Y">
+            <img src="./pictures/alphabet-learn/Y.png" alt="Y for Yak" />
+            <button class="play-btn">Y</button>
+            <audio src="./Audio/Alphabet/Y.mp3"></audio>
+        </div>
+
+        <div class="alphabet-card" data-letter="Z">
+            <img src="./pictures/alphabet-learn/Z.png" alt="Z for Zebra" />
+            <button class="play-btn">Z</button>
+            <audio src="./Audio/Alphabet/Z.mp3"></audio>
+        </div>
+
+    </div>
+
+<script>
+    // JS to play only one audio at a time
+    document.querySelectorAll('.play-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            // Pause all audios first
+            document.querySelectorAll('audio').forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            // Play audio inside the clicked card
+            const card = button.closest('.alphabet-card');
+            const audio = card.querySelector('audio');
+            audio.play();
+        });
+    });
+</script>
+
+</body>
+</html>

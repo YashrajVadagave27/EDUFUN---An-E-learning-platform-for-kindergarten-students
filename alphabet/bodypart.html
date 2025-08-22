@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learn Human Body Parts</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f0f8ff, #e6f0ff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in;
+  }
+
+  header {
+    margin: 30px 0 20px 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #1f3b73;
+    margin-bottom: 10px;
+    animation: bounceIn 1s ease-out;
+  }
+
+  header p {
+    font-size: 2rem;
+    color: #555;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 15px 40px 15px;
+  }
+
+  .body-part {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    width: 200px;
+    height: 300px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 0.5s ease forwards;
+  }
+
+  .body-part:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .body-part img {
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+
+  .body-part button {
+    padding: 9px 20px;
+    font-size: 1rem;
+    background: linear-gradient(to right, #3498db, #5dade2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .body-part button:hover {
+    background: linear-gradient(to right, #2c80b4, #4fa3d1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 500px) {
+    .body-part {
+      width: 140px;
+      height: auto;
+      padding: 10px;
+    }
+
+    .body-part img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  /* Animations */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+<link rel="stylesheet" href="/edufun/style.css">
+
+</head>
+<body>
+<header class="header">
+  <a href="#" class="logo"> <i class="fas fa-school"></i><marquee>"EDU-FUN - An E-Learning Platform For KG Students"</marquee></a>
+    <nav class="navbar">
+      <a href="../e_learn.php">Dashboard</a>
+      <a href="../logout.php">Logout</a>
+    </nav>
+</header>
+
+<header>
+  <h1>Learn Human Body Parts</h1>
+  <p>Click on button below image to hear name of the body part!</p><br><br>
+</header>
+
+<main class="container">
+
+  <div class="body-part">
+    <img src="images/head.png" alt="Head" />
+    <button onclick="playPhrase('This is your head.')">Head</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/eyes.png" alt="Eyes" />
+    <button onclick="playPhrase('This is your eye.')">Eye</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/ears.png" alt="Ears" />
+    <button onclick="playPhrase('This is your ear.')">Ear</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/nose.jpeg" alt="Nose" />
+    <button onclick="playPhrase('This is your nose.')">Nose</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/mouth.jpeg" alt="Mouth" />
+    <button onclick="playPhrase('This is your mouth.')">Mouth</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/teeth.jpeg" alt="Teeth" />
+    <button onclick="playPhrase('These are your teeth.')">Teeth</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/tongue.jpeg" alt="Tongue" />
+    <button onclick="playPhrase('This is your tongue.')">Tongue</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/hands.jpeg" alt="Hands" />
+    <button onclick="playPhrase('This is your hand.')">Hand</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/fingers.jpeg" alt="Fingers" />
+    <button onclick="playPhrase('This your finger.')">Finger</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/legs.jpeg" alt="Legs" />
+    <button onclick="playPhrase('This is your leg.')">Leg</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/neck.jpeg" alt="Neck" />
+    <button onclick="playPhrase('This is your neck.')">Neck</button>
+  </div>
+
+  <div class="body-part">
+    <img src="images/shoulders.jpeg" alt="Shoulders" />
+    <button onclick="playPhrase('This is your shoulder.')">Shoulder</button>
+  </div>
+
+</main>
+
+<script>
+  // Use Web Speech API to read out phrases (Indian English voice if available)
+  function playPhrase(text) {
+    // Stop any current speech
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-IN'; // Indian English voice preference
+    // Optionally select a female voice with Indian accent
+    const voices = window.speechSynthesis.getVoices();
+    for(let v of voices) {
+      if(v.lang === 'en-IN' && v.name.toLowerCase().includes('female')) {
+        utterance.voice = v;
+        break;
+      }
+    }
+    window.speechSynthesis.speak(utterance);
+  }
+</script>
+
+</body>
+</html>

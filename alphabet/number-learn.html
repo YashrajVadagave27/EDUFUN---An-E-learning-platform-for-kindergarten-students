@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Learn Numbers</title>
+    <link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin-top: 100px;
+            background: linear-gradient(to right, #fce4ec, #e0f7fa);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ad1457;
+            margin-bottom: 30px;
+        }
+        h4 {
+            font-size: 1.5rem;
+            color: #880e4f;
+            margin-bottom: 30px;
+        }
+        .number-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 150px;
+        }
+        .number-card {
+            background-color: #ffffff;
+            border: 4px solid #f06292;
+            border-radius: 25px;
+            width: 350px;
+            height: 400px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .number-card:hover {
+            transform: scale(1.05);
+        }
+        .number-card img {
+            width: 300px;
+            height: 320px;
+            margin-bottom: 10px;
+        }
+        .number-card button {
+            background-color: #f48fb1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #880e4f;
+            cursor: pointer;
+        }
+        .number-card button:hover {
+            background-color: #ec407a;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="/edufun/style.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo"> <i class="fas fa-school"></i><marquee>"EDU-FUN - An E-Learning Platform For KG Students"</marquee></a>
+    <nav class="navbar">
+      <a href="../m_learn.php">Dashboard</a>
+      <a href="../logout.php">Logout</a>
+    </nav>
+</header>
+    <h1>🔢 Learn Numbers</h1>
+    <h4>Click on the button below the image to hear the number!</h4>
+    <div class="number-container">
+        <div class="number-card">
+            <img src="./pictures/number-learn/one.jpg" alt="Number 1" />
+            <button onclick="document.getElementById('audio1').play()">1</button>
+            <audio id="audio1" src="./Audio/Number/1.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/two.jpg" alt="Number 2" />
+            <button onclick="document.getElementById('audio2').play()">2</button>
+            <audio id="audio2" src="./Audio/Number/2.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/three.jpg" alt="Number 3" />
+            <button onclick="document.getElementById('audio3').play()">3</button>
+            <audio id="audio3" src="./Audio/Number/3.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/four.jpg" alt="Number 4" />
+            <button onclick="document.getElementById('audio4').play()">4</button>
+            <audio id="audio4" src="./Audio/Number/4.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/five.jpg" alt="Number 5" />
+            <button onclick="document.getElementById('audio5').play()">5</button>
+            <audio id="audio5" src="./Audio/Number/5.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/six.jpg" alt="Number 6" />
+            <button onclick="document.getElementById('audio6').play()">6</button>
+            <audio id="audio6" src="./Audio/Number/6.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/seven.jpg" alt="Number 7" />
+            <button onclick="document.getElementById('audio7').play()">7</button>
+            <audio id="audio7" src="./Audio/Number/7.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/eight.jpg" alt="Number 8" />
+            <button onclick="document.getElementById('audio8').play()">8</button>
+            <audio id="audio8" src="./Audio/Number/8.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/nine.jpg" alt="Number 9" />
+            <button onclick="document.getElementById('audio9').play()">9</button>
+            <audio id="audio9" src="./Audio/Number/9.mp3"></audio>
+        </div>
+        <div class="number-card">
+            <img src="./pictures/number-learn/ten.jpg" alt="Number 10" />
+            <button onclick="document.getElementById('audio10').play()">10</button>
+            <audio id="audio10" src="./Audio/Number/10.mp3"></audio>
+        </div>
+    </div>
+</body>
+</html>

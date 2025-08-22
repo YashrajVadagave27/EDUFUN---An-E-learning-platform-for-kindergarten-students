@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/teacher-bg.png');
+    margin: 0;
+    padding: 0;
+    background-size: 100%;
+    height: 120vh;
+    color: #333;
+}
+
+.dashboard-container {
+    padding: 50px;
+    text-align: center;
+    
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.dashboard-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px auto;
+}
+
+/* Table styling for feedback */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+} 
+
+/* Styling for text wrapping in the feedback column */
+td {
+    word-wrap: break-word;
+    max-width: 200px;
+}
+

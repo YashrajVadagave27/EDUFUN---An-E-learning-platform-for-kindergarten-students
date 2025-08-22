@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+  LearnEra
+</title>
+<link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+<style>
+   /* Button Container Styles */
+.btn__container_learningh {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 2 rem;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.btn1 {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #00b894, #00cec9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+    margin-top: 2rem;
+}
+
+.btn1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+@media (max-width: 600px) {
+    .btn__container_learningh {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .btn1 {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+</style>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Game</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="MathGame.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h3>Fill In The Blank With Correct Number Or Operator</h3>
+    <div id="question"></div>
+    <button id="submit-btn">Submit</button>
+    <p id="error-msg">Some Demo Error Message</p>
+    <div class="btn__container_learningh" style="margin: 0;">
+      <button type="button" class="btn1" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+    </div>
+  </div>
+  <div class="controls-container">
+    <p id="result"></p>
+    <video  id="my-img" src="./pictures/congo.mp4" autoplay type="video/mp4" style="display:none; width:100%;height:80%"></video>
+    <video id="my-img1" src="./pictures/fail.mp4" autoplay type="video/mp4" style="display:none; width:100%;height:80%"></video>
+    <button id="start-btn">Start Game</button>
+    <div class="btn__container_learningh" style="margin: 0;">
+      <button type="button" class="btn1" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="MathGame.js"></script>
+</body>
+
+</html>

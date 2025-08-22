@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+    LearnEra
+</title>
+<link rel="icon" href="./pictures/logo.jpg" type="image/x-icon" />
+<style>
+    /* Button Container Styles */
+ .btn__container_learningh {
+     display: flex;
+     justify-content: center;
+     gap: 60px;
+     margin-top: 2 rem;
+     padding: 0 1rem;
+     align-items: center;
+ }
+ 
+ .btn1 {
+     padding: 12px 24px;
+     background: linear-gradient(45deg, #870000, #ba2b2b);
+     color: white;
+     border: none;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     box-shadow: 0 4px 15px rgba(199, 46, 71, 0.3);
+     margin-top: 2rem;
+ }
+ 
+ .btn1:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(184, 0, 0, 0.4);
+ }
+ 
+ @media (max-width: 600px) {
+     .btn__container_learningh {
+         flex-direction: row;
+         gap: 10px;
+     }
+     
+     .btn1 {
+         padding: 10px 20px;
+         font-size: 14px;
+     }
+ }
+ </style>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="memoryGame.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/2745e261bc.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="cards">
+            <div class="headline_container">
+
+                <h1> 𒆜 Brain Storm 𒆜 </h1>
+            </div>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-1.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-2.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-3.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-4.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-5.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-6.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-7.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-8.png" alt="card-image" />
+                </div>
+            </li>
+
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-1.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-2.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-3.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-4.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-5.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-6.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-7.png" alt="card-image" />
+                </div>
+            </li>
+            <li class="card">
+                <div class="view front-view"></div>
+                <div class="view back-view">
+                    <img src="images/img-8.png" alt="card-image" />
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <div class="btn__container_learningh" style="margin: 0;">
+        <button type="button" class="btn1" onclick="window.location.href='../NextGame.html';">Go To Dashboard</button>
+    </div>
+
+    <script src="./javascript/memoryGame.js"></script>
+</body>
+
+</html>
